@@ -3,6 +3,8 @@ import Navbar from "../../Components/Navbar/Nav";
 import BannerSlider from '../../Components/Banners/BannerSlider';
 import HomeCategories from '../../Components/Category/HomeCategories';
 import Product_Sidebar from '../../Components/Product/Product_Sidebar';
+import Footer1 from '../../Components/Footer/Footer1';
+import Footer2 from '../../Components/Footer/Footer2';
 
 const Home = () => {
   return (
@@ -11,7 +13,8 @@ const Home = () => {
         <BannerSlider />
         <HomeCategories />
         <Product_Sidebar />
-        <h1>Home</h1>
+        <Footer1 />
+        <Footer2 />
     </div>
   )
 }
