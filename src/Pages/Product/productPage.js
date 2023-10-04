@@ -3,7 +3,9 @@ import { Link, useParams } from 'react-router-dom';
 import img1 from "../../Assets/Images/1.png";
 import img2 from "../../Assets/Images/2.png";
 import img3 from "../../Assets/Images/3.png";
-import Nav from '../../Components/Navbar/Nav';
+import Navbar from '../../Components/Navbar/Nav';
+import Footer1 from "../../Components/Footer/Footer1";
+import Footer2 from "../../Components/Footer/Footer2";
 
 import "./productPage.css";
 
@@ -13,6 +15,7 @@ const ProductPage = () => {
     const [productData, setProductData] = useState([]);
     const [activeImg, setActiveImg] = useState({});
     const [qty, setQty] = useState(1);
+    const [showReview, setShowReview] = useState(false);
 
     const getproductdatabyid = async() => {
         let temp = {
@@ -66,7 +69,7 @@ const ProductPage = () => {
                     "ProductReviews": [
                         {
                             "ReviewId": 1,
-                            "Name": "Harshal Jain",
+                            "Name": "Padmakar Gore",
                             "Email": "",
                             "Rating": 5,
                             "Date": "2021-08-01",
@@ -74,7 +77,7 @@ const ProductPage = () => {
                         },
                         {
                             "ReviewId": 2,
-                            "Name": "Viraj",
+                            "Name": "Deepesh Kautkar",
                             "Email": "",
                             "Rating": 1,
                             "Date": "2021-08-01",
@@ -82,7 +85,7 @@ const ProductPage = () => {
                         },
                         {
                             "ReviewId": 3,
-                            "Name": "Harshal Jain",
+                            "Name": "Kunal Pandit",
                             "Email": "",
                             "Rating": 4,
                             "Date": "2021-08-01",
@@ -108,7 +111,8 @@ const ProductPage = () => {
         {/* <h1>Product id is - {prodid}</h1>
         <p>{JSON.stringify(productData)}</p> */}
 
-        <Nav />
+        <Navbar />
+
         <div className='pc1'>
             <Link to='/'>
                 <button className='goback'>
@@ -171,6 +175,66 @@ const ProductPage = () => {
                 </div>
             </div>
         </div>
+        <div className='pc2'>
+        {
+            showReview ?
+            <div className='tabs'>
+                <button className='inactive' onClick={() => setShowReview(false)}>Description</button>
+                <button className='active' onClick={() => setShowReview(true)}>Review</button>
+            </div> :
+            <div className='tabs'>
+                <button className='active' onClick={() => setShowReview(false)}>Description</button>
+                <button className='inactive' onClick={() => setShowReview(true)}>Review</button>
+            </div>
+        }
+        {
+            showReview ? 
+            <div className='reviewcont'>
+                <form>
+                    <div className='formgroup'>
+                        <label htmlFor=''>Name</label>
+                        <input type='text' />
+                    </div>
+                    <div className='formgroup'>
+                        <label htmlFor=''>Name</label>
+                        <input type='email' />
+                    </div>
+                    <div className='formgroup'>
+                        <label htmlFor=''>Review</label>
+                        <textarea name='' id='' cols='30' rows='10'></textarea>
+                    </div>
+
+                    <button>Submit</button>
+                </form>
+
+                <div className='allreview'>
+                    <h1 className='head1'>Product Reviews</h1>
+                {
+                    productData?.ProductReviews && 
+                    productData.ProductReviews.map((item, idx) => {
+                        return(
+                            <div className='review'>
+                                <div className='reviewhead'>
+                                    <p className='name'>{item.Name}</p>
+                                    <span className='date'>
+                                        {item.Date}
+                                    </span>
+                                </div>
+                                <div className='reviewbody'>
+                                    {item.Review}
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+                </div>
+            </div> :
+            <div className='desc'>{productData.ProductDescription}</div>
+        }
+        </div>
+        
+        <Footer1 />
+        <Footer2 />
     </div>
   )
 }
