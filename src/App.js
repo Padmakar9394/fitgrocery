@@ -1,6 +1,7 @@
 import './App.css';
 import {Route, Routes, BrowserRouter} from "react-router-dom";
 import Home from './Pages/HomePage/Home';
+import Product from './Pages/Product/productPage';
 
 // Import css files
 import "slick-carousel/slick/slick.css";
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/home' element={<Home />}/>
+          <Route path='/product/:prodid' element={<Product />} />
           <Route path='*' element={<div>
             <h1>404 NOT FOUND!</h1>
           </div>}/>
