@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Nav.css';
 import logo from "../../Assets/logo.png";
 import Dropdown from 'react-bootstrap/Dropdown';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
   const [cartquantity, setCartquantity] = useState(0);
@@ -34,6 +35,9 @@ const Nav = () => {
         </div>
       </div>
       <div className='s2'>
+        <Link to='/home'>
+          <a>Home</a>
+        </Link>
         <Dropdown>
           <Dropdown.Toggle variant=''             id="dropdown-basic">Categories
           </Dropdown.Toggle>
@@ -44,8 +48,12 @@ const Nav = () => {
             <Dropdown.Item href="#/action-3">House Cleaning</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <a>About Us</a>
-        <a>Contact Us</a>
+        <Link to='/about'>
+          <a>About Us</a>
+        </Link>
+        <Link to='/contact'>
+          <a>Contact Us</a>
+        </Link>
         <Dropdown>
           <Dropdown.Toggle variant=''             id="dropdown-basic">More
           </Dropdown.Toggle>
