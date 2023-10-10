@@ -9,7 +9,7 @@ import "./ExtraPages.css";
 const About = () => {
   return (
     <div className='extrapage'>
-        <Navbar />
+        <Navbar  reloadnavbar={false} />
         <SingleBanner heading='About Us'
         bannerImage='https://images.unsplash.com/photo-1694384159175-9365bf093a59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUwfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=600&q=60' />
         <div className='pgleft pgcommon'>

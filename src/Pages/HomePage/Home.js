@@ -9,7 +9,7 @@ import Footer2 from '../../Components/Footer/Footer2';
 const Home = () => {
   return (
     <div>
-        <Navbar />
+        <Navbar  reloadnavbar={false} />
         <BannerSlider />
         <HomeCategories />
         <Product_Sidebar />

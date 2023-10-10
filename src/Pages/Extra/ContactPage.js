@@ -12,7 +12,7 @@ const Contact = () => {
 
   return (
     <div className='extrapage'>
-        <Navbar />
+        <Navbar  reloadnavbar={false} />
         <SingleBanner heading='Contact Us'
         bannerImage='https://images.unsplash.com/photo-1694428276978-32c60b591548?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQ4fDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=600&q=60' />
         <div className='pgleft pgcommon'>

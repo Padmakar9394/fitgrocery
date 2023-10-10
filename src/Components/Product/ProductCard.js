@@ -1,14 +1,56 @@
 import React, { useState } from 'react'
 import './ProductCard.css';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const ProductCard = ({data}) => {
     const [show, setShow] = useState(false);
     const [qty, setQty] = useState(3);
 
-    // const getproductid = () => {
-    //     console.log(data.id);
-    // }
+    const addtocart = () => {
+        let cart = JSON.parse(localStorage.getItem('cart'))
+        let productData = data;
+        if (cart) {
+            // alert('1 item is already added to cart')
+            let itemincart = cart.find(item => item.productData.ProductId === productData.ProductId)
+            if (itemincart) {
+                cart = cart.map(item => {
+                    if (item.productData.ProductId === productData.ProductId) {
+                        return {
+                            ...item,
+                            quantity: item.quantity + qty
+                        }
+                    }
+                    else {
+                        return item
+                    }
+                })
+                localStorage.setItem('cart', JSON.stringify(cart))
+            }
+            else {
+                cart = [
+                    ...cart,
+                    {
+                        productData,
+                        quantity: qty
+                    }
+                ]
+                localStorage.setItem('cart', JSON.stringify(cart))
+            }
+        }
+        else {
+            cart = [{
+                productData,
+                quantity: qty
+            }]
+
+            // console.log(cart)
+            localStorage.setItem('cart', JSON.stringify(cart))
+        }
+        // setReloadNavbar(!reloadNavbar)
+        window.location.reload()
+        // toast.success('Item added to cart')
+    }
   return (
     <div className='product'>
         <div className='s1'>
@@ -40,7 +82,7 @@ const ProductCard = ({data}) => {
                 </div>
                 <button className='addtocart' onClick={() => {
                     setShow(false)
-                    alert("added to cart!")
+                    addtocart()
                     }}>
                     Add to cart
                 </button>
