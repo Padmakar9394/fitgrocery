@@ -8,6 +8,9 @@ import Contact from './Pages/Extra/ContactPage';
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Signup from './Pages/Auth/Signup';
+import Login from './Pages/Auth/Login';
+import ForgotPassword from './Pages/Auth/ForgotPassword';
 
 
 function App() {
@@ -20,6 +23,9 @@ function App() {
           <Route path='/product/:prodid' element={<Product />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/forgotpassword' element={<ForgotPassword />} />
           <Route path='*' element={
           <div>
             <h1>404 NOT FOUND!</h1>
