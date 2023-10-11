@@ -3,7 +3,7 @@ import './ProductCard.css';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const ProductCard = ({data}) => {
+const ProductCard = ({ data }) => {
     const [show, setShow] = useState(false);
     const [qty, setQty] = useState(3);
 
@@ -54,19 +54,19 @@ const ProductCard = ({data}) => {
   return (
     <div className='product'>
         <div className='s1'>
-            <img src={data.productImage} alt={data.productName} />
+            <img src={data.ProductImage[0].image} alt={data.ProductName} />
         </div>
         <div className='s2'>
             <h3>
                 {
-                    data.productPrice - (data.productPrice * data.discountPercent / 100)
+                    data.ProductPrice - (data.ProductPrice * data.ProductDiscount / 100)
                 }
-                <span>${data.productPrice}</span>
+                <span>${data.ProductPrice}</span>
             </h3>
-            <p>{data.productName}</p>
+            <p>{data.ProductName}</p>
         </div>
         <div className='s3'>
-            <p>{data.countType}</p>
+            <p>{data.counttype}</p>
         </div>
         {
             show ? 
