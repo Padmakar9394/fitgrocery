@@ -90,7 +90,7 @@ const Cart = () => {
               </div>
             }
             {
-              active == 3 ? 
+              active === 3 ? 
               <div className='c11' onClick={() => {
                 checkLogin() && setActive(3);
               }}>
@@ -109,7 +109,7 @@ const Cart = () => {
               </div>
             }
             {
-              active == 4 ? 
+              active === 4 ? 
               <div className='c11' onClick={() => {
                 checkLogin() && setActive(4);
               }}>
