@@ -16,7 +16,7 @@ const Cart = () => {
   const [subtotal, setSubtotal] = useState(0);
   const [shipping, setShipping] = useState(0);
   const [tax, setTax] = useState(0);
-  const [active, setActive] = useState(3);
+  const [active, setActive] = useState(1);
   const [reloadNavbar, setReloadNavbar] = useState(false);
   const [deliveryDate, setDeliveryDate] = useState(
     new Date(new Date().getTime() + 2 * 24 * 60 * 60* 1000).toISOString().split('T')[0]  
