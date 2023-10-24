@@ -14,6 +14,7 @@ import Signup from './Pages/Auth/Signup';
 import Login from './Pages/Auth/Login';
 import ForgotPassword from './Pages/Auth/ForgotPassword';
 import Cart from './Pages/Cart/Cart';
+import UserProfile from './Pages/User/UserProfile';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/user/:activepage' element={<UserProfile />} />
           <Route path='/forgotpassword' element={<ForgotPassword />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='*' element={

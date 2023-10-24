@@ -56,3 +56,22 @@
   margin-top: 10px;
 }
 
+.mainbutton1 {
+  background: none;
+  border: 1px solid var(--col1);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: var(--col1);
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.mainbutton1:hover {
+  background-color: var(--col1);
+  color: white;
+  transform: scale(1.1);
+  transition: all 0.6s ease-in-out;
+}
+
