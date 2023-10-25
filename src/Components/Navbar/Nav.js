@@ -87,13 +87,13 @@ const Nav = ({reloadnavbar}) => {
           <a>Contact Us</a>
         </Link>
         <Dropdown>
-          <Dropdown.Toggle variant=''             id="dropdown-basic">More
+          <Dropdown.Toggle variant=''id="dropdown-basic">More
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">FAQ</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Privacy Policy</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Terms & Conditions</Dropdown.Item>
+            <Dropdown.Item href='/FAQ'>FAQ</Dropdown.Item>
+            <Dropdown.Item href='/privacypolicy'>Privacy Policy</Dropdown.Item>
+            <Dropdown.Item href='termsandconditions'>Terms & Conditions</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </div>

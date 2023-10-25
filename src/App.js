@@ -15,6 +15,9 @@ import Login from './Pages/Auth/Login';
 import ForgotPassword from './Pages/Auth/ForgotPassword';
 import Cart from './Pages/Cart/Cart';
 import UserProfile from './Pages/User/UserProfile';
+import FAQ from './Pages/Extra/FAQ';
+import PrivacyPolicy from './Pages/Extra/PrivacyPolicy';
+import TermsandConditions from './Pages/Extra/TermsandConditions';
 
 
 function App() {
@@ -31,6 +34,9 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/user/:activepage' element={<UserProfile />} />
           <Route path='/forgotpassword' element={<ForgotPassword />} />
+          <Route path='/FAQ' element={<FAQ />} />
+          <Route path='/privacypolicy' element={<PrivacyPolicy />} />
+          <Route path='termsandconditions' element={<TermsandConditions />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='*' element={
           <div>
