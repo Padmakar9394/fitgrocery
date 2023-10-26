@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Nav = ({reloadnavbar}) => {
   const [cartquantity, setCartquantity] = useState(0);
-  const [shows3, setShows3] = useState(true);
+  const [shows3, setShows3] = useState(false);
 
   const getcarttotalitems = () => {
     let cart = JSON.parse(localStorage.getItem('cart'));
@@ -138,6 +138,18 @@ const Nav = ({reloadnavbar}) => {
           </li>
           <li>
             <Link to='/contact' className='stylenone'>Contact Us</Link>
+          </li>
+          <li>
+            <Dropdown>
+              <Dropdown.Toggle variant=''id="dropdown-basic">More
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href='/FAQ'>FAQ</Dropdown.Item>
+                <Dropdown.Item href='/privacypolicy'>Privacy Policy</Dropdown.Item>
+                <Dropdown.Item href='termsandconditions'>Terms & Conditions</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </li>
           <li>
             <div className='cart'>

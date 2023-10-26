@@ -208,6 +208,178 @@
     letter-spacing: 1px;
 }
 
+@media (max-width: 1500px) {
+    .pgcommon {
+        width: 100%;
+        margin: 0px;
+        padding: 30px;
+    }
+
+    .pgcommon img {
+        width: 40%;
+    }
+
+    .pgcommon div {
+        width: 60%;
+    }
+
+    .pgcommon div h1 {
+        font-size: 40px;
+    }
+
+    .pgcommon div p {
+        font-size: 20px;
+    }
+
+    .faqcontainer {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .pgcommon {
+        width: 100%;
+        margin: 0px;
+        padding: 30px;
+    }
+
+    .pgcommon img {
+        width: 50%;
+    }
+
+    .pgcommon div {
+        width: 50%;
+    }
+
+    .pgcommon div h1 {
+        font-size: 40px;
+    }
+
+    .pgcommon div p {
+        font-size: 16px;
+    }
+
+    .extrapageform {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 70%;
+        gap: 0;
+    }
+
+    .extrapageform .formgroup {
+        display: flex;
+        flex-direction: column;
+        margin: 5px 0;
+    }
+
+    .extrapageform label {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--col1);
+    }
+
+    .extrapageform input {
+        width: 100%;
+        height: 40px;
+        border: 1px solid var(--col1);
+        border-radius: 5px;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    .extrapageform textarea {
+        width: 100%;
+        height: 100px;
+        border-radius: 1px solid var(--col1);
+        margin-bottom: 10px;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .extrapage .formheading {
+        margin: 0 0 10px 0;
+        padding: 0;
+        letter-spacing: 1px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .pgcommon {
+        width: 100%;
+        margin: 0px;
+        padding: 30px;
+        flex-direction: column;
+    }
+
+    .pgcommon img {
+        width: 90%;
+    }
+
+    .pgcommon div {
+        width: 90%;
+    }
+
+    .pgcommon div h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .pgcommon div p {
+        font-size: 20px;
+    }
+
+    .extrapageform {
+        width: 90%;
+    }
+
+    .extrapageform .rating .starinactive {
+        width: 25px;
+        height: 25px;
+    }
+
+    .extrapageform .rating .staractive {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pgcont1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        /* text-align: center; */
+        width: 100%;
+        height: 100%;
+        margin: 30px 0;
+    }
+
+    .pgcont1 h3 {
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--col1);
+        margin: 0;
+        padding: 0;
+        letter-spacing: 1px;
+    }
+
+    .faqcontainer {
+        width: 97%;
+        padding: 20px;
+    }
+
+    .faqcontainer .faqhead h1 {
+        font-size: 17px;
+    }
+
+    .faqcontainer .faqbody p {
+        font-size: 13px;
+    }
+}
 
 
 
