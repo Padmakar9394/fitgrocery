@@ -12,10 +12,16 @@
     padding: 20px;
 }
 
-.usersidebar svg {
+.usersidebar .s1 svg {
     width: 30px;
     height: 30px;
-    color: var(--col1);
+    color: grey;
+}
+
+.usersidebar .s2 svg {
+    width: 30px;
+    height: 30px;
+    color: rgb(255, 255, 255);
 }
 
 .usersidebar .s1:hover{
@@ -23,4 +29,49 @@
     border-radius: 5px;
     cursor: pointer;
     color: grey;
+}
+
+.usersidebar .s2{
+    background-color: var(--col1);
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .usersidebar span {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .usersidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+        padding: 10px;
+    }
+    .usersidebar .s1, .s2 {
+        gap: 2px;
+        padding: 3px;
+    }
+
+    .usersidebar s1 {
+        background-color: white;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        padding: 5px 20px;
+    }
+
+    .usersidebar s2 {
+        border-radius: 25px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        padding: 5px 20px;
+    }
+
+    .usersidebar span {
+        font-size: 12px;
+    }
 }

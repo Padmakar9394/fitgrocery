@@ -111,4 +111,34 @@
     padding: 10px 20px;
     margin: 10px 0px;
 }
+
+@media (max-width: 1000px) {
+    .addressin {
+        flex-direction: column;
+    }
+
+    .addressin .address {
+        align-self: center;
+        width: 97%;
+    }
+
+    .addnewbtn {
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .useraddress .form {
+        flex-direction: column;
+    }
+
+    .useraddress .form .form-group {
+        width: 97%;
+        align-self: center;
+    }
+
+
+}
   

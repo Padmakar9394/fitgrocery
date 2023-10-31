@@ -41,3 +41,23 @@
 .form .form-group input:focus {
     border: 1px solid var(--col1);
 }
+
+@media (max-width: 800px) {
+    .accountsettings .form {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .accountsettings .form .form-group {
+        width: 95%;
+    }
+
+    .accountsettings h1 {
+        font-size: 20px;
+    }
+
+    .accountsettings .form .form-group label {
+        font-size: 16px;
+    }
+}

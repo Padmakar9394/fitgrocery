@@ -26,3 +26,45 @@
     border-radius: 5px;
     min-height: 50vh;
 }
+
+@media (max-width: 1000px) {
+    .userprofilein .left {
+        width: 30%;
+    }
+
+    .userprofilein {
+        gap: 10px;
+    }
+
+    .userprofilein .right {
+        width: 68%;
+    } 
+}
+
+@media (max-width: 800px) {
+    .userprofilein .left {
+        width: 20%;
+    }
+
+    .userprofilein .right {
+        width: 78%;
+    }
+}
+
+@media (max-width: 500px) { 
+    .userprofilein {
+        flex-direction: column;
+    }
+
+    .userprofilein .left {
+        width: 97%;
+        align-self: center;
+        min-height: 0;
+    }
+
+    .userprofilein .right {
+        width: 97%;
+        min-height: 0;
+        align-self: center;
+    }
+}
