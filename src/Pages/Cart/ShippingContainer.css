@@ -104,3 +104,29 @@
     font-weight: 700;
     cursor: pointer;
 }
+
+@media screen and (max-width: 800px) {
+    .shippingcont {
+        width: 95%;
+    }
+
+    .shippingcont .selectdate {
+        width: 95%;
+    }
+
+    .shippingcont .previous {
+        width: 95%;
+    }
+
+    .shippingcont .shippingadd {
+        width: 95%;
+    }
+
+    .shippingcont h2 {
+        font-size: 20px;
+    }
+
+    .shippingcont h3 {
+        font-size: 16px;
+    }
+}

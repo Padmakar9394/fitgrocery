@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import "./UserAddress.css";
 
 const UserAddress = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   const savedaddress = [
     {

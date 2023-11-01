@@ -10,6 +10,9 @@ import "./CartContainer.css";
 import "./ShippingContainer.css";
 import "./PaymentContainer.css";
 import "./OrderSuccessfull.css";
+import { useRecoilState } from 'recoil';
+import { orderSuccessfulProvider } from '../../Providers/OrderSuccessfulProvider';
+import OrderSuccessful from '../../Components/Order/OrderSuccessful';
 
 const Cart = () => {
   const [cartdata, setCartdata] = useState([]);
@@ -77,9 +80,14 @@ const Cart = () => {
       postalcode: "123456",
     }
   ]
+
+  const [selectedOrderID, setSelectedOrderID] = useState(0);
+  const [orderSuccessCont, setOrderSuccessCont] = useRecoilState(orderSuccessfulProvider);
+
   return (
     <div>
         <Navbar reloadnavbar={reloadNavbar} />
+        {orderSuccessCont && <OrderSuccessful orderid={selectedOrderID} message={`Order placed successfully, Order ID: ${selectedOrderID}`} redirectto='userorders' />}
         <SingleBanner heading='My Cart'
         bannerImage='https://images.unsplash.com/photo-1694384159175-9365bf093a59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUwfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=600&q=60' />
 
@@ -186,7 +194,7 @@ const Cart = () => {
                         cartdata.map((item, index) => {
                           return (
                             <tr key={index} className='cartitemrow'>
-                              <td>
+                              <td data-label='Product'>
                                 <div className='cartproduct' onClick={() => {
                                   window.location.href = `/product/${item.productData.ProductId}`
                                 }}>
@@ -194,7 +202,7 @@ const Cart = () => {
                                   <p>{item.productData.ProductName}</p>
                                 </div>
                               </td>
-                              <td>
+                              <td data-label='Quantity'>
                                 <div className='quantity'>
                                   <button className='minus' onClick={() => {
                                     let newcartdata = [...cartdata];
@@ -217,15 +225,15 @@ const Cart = () => {
                                   }}>+</button>
                                 </div>
                               </td>
-                              <td>
+                              <td data-label='Price'>
                                 <p>${item.productData.SalesPrice ? item.productData.SalesPrice.toFixed(2) : 0.00}</p>
                               </td>
-                              <td>
+                              <td data-label='Total'>
                                 <p>${
                                   item.productData.SalesPrice * item.quantity}
                                 </p>
                               </td>
-                              <td>
+                              <td data-label='Remove'>
                                 <div className='delbtn' onClick={() => {
                                   removeitemfromcart(index);
                                 }}>
@@ -420,8 +428,9 @@ const Cart = () => {
               }}>Back</button> */}
               <button className='nextbtn' onClick={() => {
                 // alert("Order Placed Successfully")
-                window.location.href='/'
-              }}>Go To Home</button>
+                setSelectedOrderID(12345);
+                setOrderSuccessCont(true);
+              }}>View Invoice</button>
             </div>
           }
         </div>

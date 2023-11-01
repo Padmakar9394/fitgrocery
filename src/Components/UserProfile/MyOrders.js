@@ -63,7 +63,7 @@ const MyOrders = () => {
     <div className='yourorders'>
         <h1 className='mainhead1'>Your Orders</h1>
         {orderSuccessCont && <OrderSuccessful orderid={selectedOrderID} message={`Order ID: ${selectedOrderID}`} />}
-        <table>
+        <table className='yourorderstable'>
             <thead>
                 <tr>
                     <th scope='col'>Order ID</th>
@@ -81,10 +81,10 @@ const MyOrders = () => {
                                 <td data-label='OrderID'>{item.id}</td>
                                 <td data-label='OrderDate'>{item.date}</td>
                                 <td data-label='Delivery Status'>
-                                    <p>
+                                    <div>
                                         {item.status === 'Delivered' && <span className='greendot'></span>}{item.status === 'On the way' && <span className='yellowdot'></span>}{item.status === 'Cancelled' && <span className='reddot'></span>}
                                         {item.status} 
-                                    </p>
+                                    </div>
                                 </td>
                                 <td data-label='Total'>${item.total}</td>
                                 <td data-label='Invoice'>
