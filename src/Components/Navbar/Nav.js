@@ -93,7 +93,7 @@ const Nav = ({reloadnavbar}) => {
           <Dropdown.Menu>
             <Dropdown.Item href='/FAQ'>FAQ</Dropdown.Item>
             <Dropdown.Item href='/privacypolicy'>Privacy Policy</Dropdown.Item>
-            <Dropdown.Item href='termsandconditions'>Terms & Conditions</Dropdown.Item>
+            <Dropdown.Item href='/termsandconditions'>Terms & Conditions</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </div>
@@ -147,7 +147,7 @@ const Nav = ({reloadnavbar}) => {
               <Dropdown.Menu>
                 <Dropdown.Item href='/FAQ'>FAQ</Dropdown.Item>
                 <Dropdown.Item href='/privacypolicy'>Privacy Policy</Dropdown.Item>
-                <Dropdown.Item href='termsandconditions'>Terms & Conditions</Dropdown.Item>
+                <Dropdown.Item href='/termsandconditions'>Terms & Conditions</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </li>
@@ -169,7 +169,7 @@ const Nav = ({reloadnavbar}) => {
               <Dropdown.Menu>
                 <Dropdown.Item href='/login'>Login</Dropdown.Item>
                 <Dropdown.Item href='/signup'>Signup</Dropdown.Item>
-                <Dropdown.Item href='#'>Profile</Dropdown.Item>
+                <Dropdown.Item href='/user/accountsettings'>Profile</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </li>

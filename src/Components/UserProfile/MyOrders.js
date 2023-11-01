@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import "./MyOrders.css";
+import OrderSuccessful from '../Order/OrderSuccessful';
+import { useRecoilState } from 'recoil';
+import { orderSuccessfulProvider } from '../../Providers/OrderSuccessfulProvider';
 
 const MyOrders = () => {
     const data = [
@@ -53,9 +56,13 @@ const MyOrders = () => {
             total: 1735
         },
     ]
+
+    const [selectedOrderID, setSelectedOrderID] = useState(0);
+    const [orderSuccessCont, setOrderSuccessCont] = useRecoilState(orderSuccessfulProvider);
   return (
     <div className='yourorders'>
         <h1 className='mainhead1'>Your Orders</h1>
+        {orderSuccessCont && <OrderSuccessful orderid={selectedOrderID} message={`Order ID: ${selectedOrderID}`} />}
         <table>
             <thead>
                 <tr>
@@ -81,7 +88,10 @@ const MyOrders = () => {
                                 </td>
                                 <td data-label='Total'>${item.total}</td>
                                 <td data-label='Invoice'>
-                                    <button className='mainbutton1'>View</button>
+                                    <button className='mainbutton1' onClick={() => {
+                                        setSelectedOrderID(item.id)
+                                        setOrderSuccessCont(true)
+                                    }}>View</button>
                                 </td>
                             </tr>
                         )
